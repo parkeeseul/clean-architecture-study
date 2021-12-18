@@ -1,0 +1,43 @@
+package com.seul.cleanarchitecturestudy.account.domain;
+
+import lombok.Getter;
+import lombok.NonNull;
+
+import java.time.LocalDateTime;
+
+public class Activity {
+    @Getter
+    private ActivityId id;
+
+    @Getter
+    @NonNull
+    private final AccountId ownerAccountId;
+
+    @Getter
+    @NonNull
+    private final AccountId sourceAccountId;
+
+    @Getter
+    @NonNull
+    private final AccountId targetAccountId;
+
+    @Getter
+    @NonNull
+    private final LocalDateTime timestamp;
+
+    private final Money money;
+
+    public Activity(
+            @NonNull AccountId ownerAccountId,
+            @NonNull AccountId sourceAccountId,
+            @NonNull AccountId targetAccountId,
+            @NonNull LocalDateTime timestamp,
+            @NonNull Money money) {
+        this.id = null;
+        this.ownerAccountId = ownerAccountId;
+        this.sourceAccountId = sourceAccountId;
+        this.targetAccountId = targetAccountId;
+        this.timestamp = timestamp;
+        this.money = money;
+    }
+}
