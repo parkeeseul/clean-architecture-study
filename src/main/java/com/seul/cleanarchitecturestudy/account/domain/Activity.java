@@ -2,10 +2,15 @@ package com.seul.cleanarchitecturestudy.account.domain;
 
 import lombok.Getter;
 import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
+import lombok.Value;
 
 import java.time.LocalDateTime;
 
+@Value
+@RequiredArgsConstructor
 public class Activity {
+
     @Getter
     private ActivityId id;
 
@@ -25,6 +30,8 @@ public class Activity {
     @NonNull
     private final LocalDateTime timestamp;
 
+    @Getter
+    @NonNull
     private final Money money;
 
     public Activity(
